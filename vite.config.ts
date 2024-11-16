@@ -6,19 +6,23 @@ import VueRouter from 'unplugin-vue-router/vite'
 import Layouts from 'vite-plugin-vue-layouts'
 
 import UnoCSS from 'unocss/vite'
-
 import AutoImport from 'unplugin-auto-import/vite'
 // 这里使用的是 unplugin-vue-router 而不是 vue-router
 import { VueRouterAutoImports } from 'unplugin-vue-router'
-
 import Components from 'unplugin-vue-components/vite'
+
+import { viteMockServe } from 'vite-plugin-mock'
 
 export default defineConfig({
   plugins: [
     VueRouter({ routesFolder: 'src/views' }),
-    vue(), // Vue() 必须放在 VueRouter() 之后
+    vue(),
     vueJsx(),
-    Layouts(),
+    Layouts({
+      layoutsDirs: 'src/layouts', // 指定布局文件
+      defaultLayout: 'default', // 指定默认布局
+      pagesDirs: 'src/views', // 指定页面文件
+    }),
 
     UnoCSS(),
 
@@ -43,6 +47,12 @@ export default defineConfig({
     }),
 
     Components(),
+
+    viteMockServe({
+      // default
+      mockPath: 'mock',
+      enable: true,
+    }),
   ],
 
   resolve: {

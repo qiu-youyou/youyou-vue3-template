@@ -1,6 +1,6 @@
 # youyou-vue3-template
 
-This template should help get you started developing with Vue 3 in Vite.
+A Vite + Vue3 + TS template with Pinia、UnoCSS、Iconify、AutoImport、AutoComponents、AutoRouter、Mock Server.
 
 ## Recommended IDE Setup
 
