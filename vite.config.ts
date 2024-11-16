@@ -7,23 +7,18 @@ import Layouts from 'vite-plugin-vue-layouts'
 
 import UnoCSS from 'unocss/vite'
 
-// 自动导入
 import AutoImport from 'unplugin-auto-import/vite'
 // 这里使用的是 unplugin-vue-router 而不是 vue-router
 import { VueRouterAutoImports } from 'unplugin-vue-router'
 
-import Components from 'unplugin-vue-components/vite' // [!code focus: 4]
+import Components from 'unplugin-vue-components/vite'
 
 export default defineConfig({
   plugins: [
     VueRouter({ routesFolder: 'src/views' }),
     vue(), // Vue() 必须放在 VueRouter() 之后
     vueJsx(),
-    Layouts({
-      layoutsDirs: 'src/layouts', // 指定布局文件
-      defaultLayout: 'default', // 指定默认布局
-      pagesDirs: 'src/views', // 指定
-    }),
+    Layouts(),
 
     UnoCSS(),
 
@@ -47,8 +42,9 @@ export default defineConfig({
       ],
     }),
 
-    Components(), // [!code focus]
+    Components(),
   ],
+
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
