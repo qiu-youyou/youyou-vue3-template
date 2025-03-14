@@ -1,11 +1,11 @@
-import { MockMethod } from 'vite-plugin-mock'
+import { MockMethod } from 'vite-plugin-mock';
 
 export default [
   {
     url: '/api/get',
     method: 'get',
     response: ({ query }) => {
-      return { code: 0, data: { name: 'vben' } }
+      return { code: 0, data: { name: 'vben' } };
     },
   },
   {
@@ -14,4 +14,4 @@ export default [
     timeout: 2000,
     response: { code: 0, data: { name: 'vben' } },
   },
-] as MockMethod[]
+] as MockMethod[];

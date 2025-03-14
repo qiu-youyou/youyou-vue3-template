@@ -1,19 +1,19 @@
-import { fileURLToPath, URL } from 'node:url'
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import vueJsx from '@vitejs/plugin-vue-jsx'
-import VueRouter from 'unplugin-vue-router/vite'
-import Layouts from 'vite-plugin-vue-layouts'
+import { fileURLToPath, URL } from 'node:url';
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import vueJsx from '@vitejs/plugin-vue-jsx';
+import VueRouter from 'unplugin-vue-router/vite';
+import Layouts from 'vite-plugin-vue-layouts';
 
-import UnoCSS from 'unocss/vite'
-import AutoImport from 'unplugin-auto-import/vite'
+import UnoCSS from 'unocss/vite';
+import AutoImport from 'unplugin-auto-import/vite';
 // 这里使用的是 unplugin-vue-router 而不是 vue-router
-import { VueRouterAutoImports } from 'unplugin-vue-router'
-import Components from 'unplugin-vue-components/vite'
+import { VueRouterAutoImports } from 'unplugin-vue-router';
+import Components from 'unplugin-vue-components/vite';
 
-import { viteMockServe } from 'vite-plugin-mock'
+import { viteMockServe } from 'vite-plugin-mock';
 
-import { VitePWA } from 'vite-plugin-pwa'
+import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
   plugins: [
@@ -84,4 +84,4 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
-})
+});

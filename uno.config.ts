@@ -1,5 +1,5 @@
-import { defineConfig } from 'unocss'
-import { presetWind3, presetIcons } from 'unocss' // presets
+import { defineConfig } from 'unocss';
+import { presetWind3, presetIcons } from 'unocss'; // presets
 export default defineConfig({
   // ...UnoCSS options
   presets: [
@@ -15,4 +15,4 @@ export default defineConfig({
       },
     }),
   ],
-})
+});
